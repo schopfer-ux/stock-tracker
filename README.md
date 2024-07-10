@@ -1,7 +1,7 @@
 # Stock Tracker | Schopfer
 This project is designed to facilitate stock analysis while also serving using the opportunity to learn frontend design principles. The main goal of this project is to create a user-friendly interface for analyzing stock data. It also serves as a learning ground to experiment with frontend technologies and design systems.
 
-Open [https://main.d38y052kegzvry.amplifyapp.com/] (this link) to view this website live.
+Open ([this link](https://main.d38y052kegzvry.amplifyapp.com/)) to view this website live.
 
 ## Features
 - Frontend: Developed using React JS and styled with Bootstrap.
