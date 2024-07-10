@@ -10,7 +10,7 @@
   
   body{
     background-color: var(--bodyBackground);
-    font-family: 'Poppins';
+    font-family: "Montserrat";
   }
   
   /* STOCK TRACKER COMPONENTS [STARTS] */
@@ -71,6 +71,12 @@
     width: 200px; /* Example width */
     max-width: 100%; /* Ensure it doesn't overflow parent */
   }
+
+  @media (max-width:772px){
+    .stock-title {
+      width: auto;
+    }
+  }
   
   .content-box {
     flex: 1 1 0;
@@ -83,7 +89,7 @@
   .stock-label {
     color: var(--p-color2);
     font-size: 12px;
-    font-family: 'Poppins';
+    font-family: "Montserrat";
     font-weight: 600;
     word-wrap: break-word;
   }
@@ -91,7 +97,7 @@
   .large-value {
     color: var(--p-color);
     font-size: 30px;
-    font-family: 'Poppins';
+    font-family: "Montserrat";
     font-weight: 500;
     word-wrap: break-word;
   }
@@ -99,7 +105,7 @@
   .small-value {
     color: #25851D;
     font-size: 25px;
-    font-family: 'Poppins';
+    font-family: "Montserrat";
     font-weight: 500;
     word-wrap: break-word;
   }

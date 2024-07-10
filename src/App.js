@@ -1,9 +1,24 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Navbar,
+  Container,
+  Row,
+  Col,
+  Button,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
+import URLPortal from "./components/urlPortal";
 import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import URLPortal from "./components/urlPortal";
-import { Navbar, Container } from "react-bootstrap";
+
+import "@fontsource/montserrat";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/700.css";
+
+import logo from "./logo.svg";
 
 class App extends Component {
   constructor() {
@@ -39,55 +54,56 @@ class App extends Component {
     return (
       <div className="App">
         {secretKey ? (
-          <div>
-            <Navbar className="bg-body-tertiary">
+          <>
+            <Navbar bg="body-tertiary" variant="dark" className="mb-4">
               <Container>
-              
-            <h3>Stock Tracker | Schopfer</h3> 
-
-            <button
-              type="button"
-              className="btn btn-danger"
-              onClick={this.resetKey}
-            >
-              <i class="bi bi-escape"></i>
-            </button>
-
+                <Navbar.Brand>
+                  <img
+                    alt="logo"
+                    src={logo}
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top me-2"
+                  />
+                  <span style={{ color: "var(--bodyBackground)" }}>Stock Tracker</span>
+                </Navbar.Brand>
+                <Button variant="danger" onClick={this.resetKey}>
+                <i class="bi bi-escape"></i>
+                  Exit
+                </Button>
               </Container>
             </Navbar>
-            
             <URLPortal />
-          </div>
+          </>
         ) : (
-          <div className="container-fluid">
-            <div className="row flex-column gap-3">
-              <h1>Stock Tracker | Schopfer</h1>
-              <p>
-                This website is my personal playground for diving into frontend
-                technologies
-              </p>
-              <p style={{ color: "red" }}>{errorMsg}</p>
-              <div className="row flex-row w-25 mx-auto">
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter secret key"
-                    onChange={this.handleInputChange}
-                  />
-                </div>
-                <div className="col-auto">
-                  <button
-                    type="button"
-                    className="btn btn-outline-light"
-                    onClick={this.checkKey}
-                  >
-                    Validate
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Container fluid>
+            <Row className="flex-column gap-3">
+              <Col className="text-center">
+                <h1>Stock Tracker | Schopfer</h1>
+                <p>
+                  This website is my personal playground for diving into
+                  frontend technologies
+                </p>
+                <p style={{ color: "red" }}>{errorMsg}</p>
+              </Col>
+              <Col xs={12} className="text-center">
+                <Row className="justify-content-center">
+                  <Col xs={12} md="auto">
+                    <InputGroup className="mb-3">
+                      <FormControl
+                        type="text"
+                        placeholder="Enter secret key"
+                        onChange={this.handleInputChange}
+                      />
+                      <Button variant="outline-light" onClick={this.checkKey}>
+                        Validate
+                      </Button>
+                    </InputGroup>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
         )}
       </div>
     );
